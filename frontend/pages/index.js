@@ -13,7 +13,7 @@ export default function Home() {
       </Head>
       <main>
         {/* welcome screen by jeethendra */}
-        <div style={{ height: "100vh" }}>
+        <div>
           <WelcomePage />
         </div>
 
