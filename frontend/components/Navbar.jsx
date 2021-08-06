@@ -13,6 +13,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import Sidebar from "./Sidebar";
+import Image from 'next/image';
 
 const useStyles = makeStyles((theme) => ({
   mon: {
@@ -42,9 +43,9 @@ function Navbar() {
         <Toolbar>
           <Hidden mdUp>
             <Sidebar/>
- 
           </Hidden>
-          <Typography variant="h4" style={{ color: "black", flexGrow: "1" }}>
+          <Image src="/olympia.png" height={40} width={40} />
+          <Typography variant="h4" style={{ color: "black", flexGrow: "1", marginLeft:"5px" }}>
             Olympia
           </Typography>
           <Hidden smDown>
