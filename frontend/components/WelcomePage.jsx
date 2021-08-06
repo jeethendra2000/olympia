@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 function WelcomePage() {
   const classes = useStyles();
   return (
-    <div style={{ paddingTop: "35px", paddingBottom: "30px" }}>
+    <div style={{ paddingTop: "45px", paddingBottom: "35px" }}>
       <Box>
         <Grid
           container
@@ -29,7 +29,7 @@ function WelcomePage() {
           className={classes.gridContainer}
         >
           <Grid item xs={12} sm={12} md={6}>
-            <Image src="/olympic.png" height={780} width={780} />
+            <Image src="/olympics(2).png" height={800} width={800} />
           </Grid>
           <Grid item xs={12} sm={12} md={6}>
             <Typography variant="h2" color="textPrimary">

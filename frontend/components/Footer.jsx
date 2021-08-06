@@ -14,7 +14,7 @@ import {
     Typography,
   } from "@material-ui/core";
   import Image from "next/image";
-  
+
 const useStyles = makeStyles((theme) => ({}));
 
 function Footer() {
@@ -22,7 +22,13 @@ function Footer() {
 
   return (
     <footer>
-      <Box></Box>
+      <Box>
+          <Grid container>
+              <Grid item xs={4} sm={4} md={12}></Grid>
+              <Grid item xs={4} sm={4} md={12}></Grid>
+              <Grid item xs={4} sm={4} md={12}></Grid>
+          </Grid>
+      </Box>
     </footer>
   );
 }
