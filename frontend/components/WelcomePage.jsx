@@ -1,24 +1,9 @@
 import React from "react";
-import {
-  Box,
-  Button,
-  Grid,
-  Typography,
-} from "@material-ui/core";
+import styles from "../styles/Home.module.css";
+import { Box, Button, Grid, Typography } from "@material-ui/core";
 import Image from "next/image";
 
-import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  gridContainer: {
-    flexDirection: "row-reverse",
-    [theme.breakpoints.down("sm")]: {
-      flexDirection: "row",
-    },
-  },
-}));
 function WelcomePage() {
-  const classes = useStyles();
   return (
     <div style={{ paddingTop: "45px", paddingBottom: "35px" }}>
       <Box>
@@ -26,7 +11,7 @@ function WelcomePage() {
           container
           alignItems="center"
           spacing={2}
-          className={classes.gridContainer}
+          className={styles.welcomeImage}
         >
           <Grid item xs={12} sm={12} md={6}>
             <Image src="/olympics(2).png" height={800} width={800} />

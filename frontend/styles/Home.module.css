@@ -118,3 +118,19 @@
         flex-direction: column;
     }
 }
+
+.welcomeImage {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 600px) {
+    .welcomeImage {
+        flex-direction: row;
+    }
+}
+
+.cpFooter {
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
