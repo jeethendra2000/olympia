@@ -12,6 +12,7 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
+import Sidebar from "./Sidebar";
 
 const useStyles = makeStyles((theme) => ({
   mon: {
@@ -40,14 +41,8 @@ function Navbar() {
       <AppBar position="fixed" style={{ backgroundColor: "#FFBF00" }}>
         <Toolbar>
           <Hidden mdUp>
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="menu"
-            >
-              <MenuIcon />
-            </IconButton>
+            <Sidebar/>
+ 
           </Hidden>
           <Typography variant="h4" style={{ color: "black", flexGrow: "1" }}>
             Olympia
