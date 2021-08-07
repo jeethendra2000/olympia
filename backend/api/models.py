@@ -1,6 +1,7 @@
 from django.db import models
 
 # Create your models here.
+
 class Achievers(models.Model):
     athleteImage = models.ImageField(upload_to="athleteImages")
     name = models.CharField(max_length=100)
@@ -11,3 +12,4 @@ class Achievers(models.Model):
 
     def __str__(self):
         return self.name
+
