@@ -14,7 +14,7 @@ function about() {
       <Grid container spacing={6} style={{ marginBottom: "10px" }}>
         <Grid item xs={12} sm={6} md={3}>
           <AboutCard
-            image="https://picsum.photos/200"
+            image="hhttp://127.0.0.1:8000/media/athleteImages/jeethendra.jpg"
             fullname="Jeethendra S R"
             work="Founder & Developer"
             bio="I am a passionate programmer, interested in problem solving and to work on upcomming technologies"
