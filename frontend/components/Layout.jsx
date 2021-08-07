@@ -5,7 +5,7 @@ import { Container } from "@material-ui/core";
 
 function layout({ children }) {
   return (
-    <div>
+    <div style={{backgroundColor:"#F5F5F5"}}>
       <Navbar />
       <Container style={{paddingTop:"50px"}}>{children}</Container>
       <Footer />
