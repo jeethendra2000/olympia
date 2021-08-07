@@ -26,7 +26,7 @@ const useStyles = makeStyles({
     wordBreak: "break-all",
     overflow: "hidden",
   },
-  customBox2: {
+  customBox: {
     display: "-webkit-box",
     boxOrient: "vertical",
     lineClamp: 2,
@@ -56,7 +56,7 @@ function LiveCards({ title, description, url, name }) {
                     <Box
                       fontSize="h5.fontSize"
                       component="div"
-                      classes={{ root: classes.customBox1 }}
+                      classes={{ root: classes.customBox }}
                     >
                       <Typography variant="h6">{title}</Typography>
                     </Box>
@@ -64,7 +64,7 @@ function LiveCards({ title, description, url, name }) {
                     <Box
                       fontSize="h5.fontSize"
                       component="div"
-                      classes={{ root: classes.customBox2 }}
+                      classes={{ root: classes.customBox }}
                     >
                       <Typography
                         variant="body2"
