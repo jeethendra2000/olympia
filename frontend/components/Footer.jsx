@@ -14,7 +14,7 @@ const currentYear = new Date().getFullYear();
 
 function Footer() {
   return (
-    <footer style={{ backgroundColor: "#FFBF00", paddingTop:"20px"}}>
+    <footer style={{ backgroundColor: "#FFBF00", paddingTop:"30px", marginTop:"50px"}}>
       <Container>
         <Box>
           <Grid container spacing={8} justifyContent="center">
