@@ -14,7 +14,7 @@ function WelcomePage() {
           className={styles.welcomeImage}
         >
           <Grid item xs={12} sm={12} md={6}>
-            <Image src="/olympics(2).png" height={800} width={800} />
+            <Image src="/olympics.png" height={800} width={800} />
           </Grid>
           <Grid item xs={12} sm={12} md={6}>
             <Typography variant="h2" color="textPrimary">
