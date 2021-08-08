@@ -2,7 +2,16 @@ import { Typography, Grid } from "@material-ui/core";
 import React from "react";
 import AboutCard from "../components/AboutCard";
 
-function about() {
+export const getStaticProps = async () => {
+  const res = await fetch("http://127.0.0.1:8000/aboutUs/");
+  const data = await res.json();
+
+  return {
+    props: { team_members: data },
+  };
+};
+
+function about({ team_members }) {
   return (
     <div style={{ marginTop: "50px" }}>
       <Typography
@@ -12,38 +21,16 @@ function about() {
         Our Team
       </Typography>
       <Grid container spacing={6} style={{ marginBottom: "10px" }}>
-        <Grid item xs={12} sm={6} md={3}>
-          <AboutCard
-            image="http://127.0.0.1:8000/media/athleteImages/jeethendra.jpg"
-            fullname="Jeethendra S R"
-            work="Founder & Developer"
-            bio="I am a passionate programmer, interested in problem solving and to work on upcomming technologies"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <AboutCard
-            image="http://127.0.0.1:8000/media/athleteImages/olympic2.jpg"
-            fullname="Monika B A"
-            work="Founder & Developer"
-            bio="I am an active learner, student at Government Engineeering College, Hassan"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <AboutCard
-            image="https://picsum.photos/200"
-            fullname="Ambika"
-            work="Developer"
-            bio="I am an active learner, student at Government Engineeering College, Hassan"
-          />
-        </Grid>
-        <Grid item xs={12} sm={6} md={3}>
-          <AboutCard
-            image="https://picsum.photos/200"
-            fullname="Chandana M V"
-            work="Developer"
-            bio="I am an active learner, student at Government Engineeering College, Hassan"
-          />
-        </Grid>
+        {team_members.map((team_member) => (
+          <Grid item xs={12} sm={6} md={3}>
+            <AboutCard
+              image={team_member.profileImage}
+              fullname={team_member.fullName}
+              work={team_member.work}
+              bio={team_member.bio}
+            />
+          </Grid>
+        ))}
       </Grid>
     </div>
   );

@@ -29,3 +29,6 @@ class AboutUs(models.Model):
     fullName = models.CharField(max_length=100)
     work = models.CharField(max_length=30)
     bio = models.TextField(max_length=100)
+
+    def __str__(self):
+        return self.fullName
