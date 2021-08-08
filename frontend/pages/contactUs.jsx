@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Box,
   Card,
@@ -10,11 +10,20 @@ import {
 } from "@material-ui/core";
 
 function contactUs() {
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) =>{
+      e.preventDefault();
+      
+  }
+
   return (
     <div style={{ marginTop: "50px" }}>
       <Grid container spacing={4} alignItems="center">
         <Grid item xs={12} sm={12} md={5}>
-          <Typography variant="h3" style={{ marginBottom: "20px" }}>
+          <Typography variant="h2" style={{ marginBottom: "20px" }}>
             Contact Us
           </Typography>
           <Typography variant="h6" style={{ marginBottom: "40px" }}>
@@ -35,10 +44,6 @@ function contactUs() {
                 direction="column"
                 container
                 spacing={3}
-                component="form"
-                noValidate
-                autoComplete="off"
-                // onSubmit={handleSubmit}
               >
                 <Grid item>
                   <Typography variant="h5" style={{ marginBottom: "20px" }}>
@@ -46,8 +51,14 @@ function contactUs() {
                   </Typography>
                 </Grid>
                 <Grid item>
-                  <form noValidate autoComplete="off">
+                  <form
+                    noValidate
+                    autoComplete="off"
+                    style={{ textAlign: "center" }}
+                    onSubmit={handleSubmit}
+                  >
                     <TextField
+                      onChange={(e) => setFullName(e.target.value)}
                       style={{
                         margin: "10px",
                         paddingRight: "20px",
@@ -59,6 +70,7 @@ function contactUs() {
                       required
                     />
                     <TextField
+                      onChange={(e) => setEmail(e.target.value)}
                       style={{
                         margin: "10px",
                         paddingRight: "20px",
@@ -70,6 +82,7 @@ function contactUs() {
                       required
                     />
                     <TextField
+                      onChange={(e) => setMessage(e.target.value)}
                       style={{
                         margin: "10px",
                         paddingRight: "20px",
@@ -84,9 +97,7 @@ function contactUs() {
                     <Button
                       variant="contained"
                       type="submit"
-                      // color="secondary"
                       style={{
-                        alignSelf: "center",
                         borderRadius: "20px",
                         marginTop: "20px",
                         marginBottom: "20px",
