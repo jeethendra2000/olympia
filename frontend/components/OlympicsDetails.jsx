@@ -51,13 +51,20 @@ function OlympicsDetails() {
         IOC OLYMPIC HISTORY
       </Typography>
       <Typography variant="h6" color="textSecondary" gutterBottom>
-        <img
+        <Image
           src="3.jpg"
           alt="committe"
           width="300"
           height="300"
           align="right"
-        ></img>
+        />
+        {/* <img
+          src="3.jpg"
+          alt="committe"
+          width="300"
+          height="300"
+          align="right"
+        ></img> */}
         <h4>
           {" "}
           The founder of the International Olympic Committee was Baron Pierre de
@@ -85,13 +92,14 @@ function OlympicsDetails() {
         HISTORY OF THE RINGS
       </Typography>
       <Typography variant="h6" color="textSecondary" gutterBottom>
-        <img
+        {/* <img
           src="3.jpg"
           alt="rings"
           width="300"
           height="300"
           align="right"
-        ></img>
+        ></img> */}
+        <Image src="3.jpg" alt="rings" width="300" height="300" align="right" />
         <h4>
           The interlocking rings of the Olympic flag was created by Baron Pierre
           de Coubertin, the co-founder of the modern Olympic games. The five
@@ -114,13 +122,20 @@ function OlympicsDetails() {
       <Typography variant="h5" color="textPrimary" align="left">
         IOC PRINCIPLES
       </Typography>
-      <img
+      {/* <img
         src="4.jpg"
         alt="committe"
         width="300"
         height="300"
         align="right"
-      ></img>
+      ></img> */}
+      <Image
+        src="4.jpg"
+        alt="committe"
+        width="300"
+        height="300"
+        align="right"
+      />
       <Typography variant="h6" color="textSecondary" gutterBottom>
         <h4>
           The IOC is at the center of the world sporting arena. It supports

@@ -9,15 +9,46 @@ import {
   Typography,
 } from "@material-ui/core";
 
-function contactUs() {
+function ContactUs() {
   const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  const handleSubmit = (e) =>{
-      e.preventDefault();
-      
-  }
+  const [fullNameError, setFullNameError] = useState(false);
+  const [emailError, setEmailError] = useState(false);
+  const [messageError, setMessageError] = useState(false);
+
+  const handleSubmit = async (e) =>{
+    e.preventDefault();
+
+    setFullNameError(false);
+    setEmailError(false);
+    setMessageError(false);
+
+    if(fullName == ""){
+      setFullNameError(true);
+    }
+    if(email == ""){
+      setEmailError(true);
+    }
+    if(message == ""){
+      setMessageError(true);
+    }
+    
+    if(fullName && email && message){
+      const response = await fetch("http://127.0.0.1:8000/contactUs/", {
+        method:'POST',
+        body:JSON.stringify({fullName, email, message}),
+        headers:{
+          'Content-Type' : 'application/json',
+        },
+      })
+    }
+
+    setFullName("");
+    setEmail("");
+    setMessage("");
+}
 
   return (
     <div style={{ marginTop: "50px" }}>
@@ -56,9 +87,10 @@ function contactUs() {
                     autoComplete="off"
                     style={{ textAlign: "center" }}
                     onSubmit={handleSubmit}
-                  >
+                    >
                     <TextField
                       onChange={(e) => setFullName(e.target.value)}
+                      value={fullName}
                       style={{
                         margin: "10px",
                         paddingRight: "20px",
@@ -71,6 +103,7 @@ function contactUs() {
                     />
                     <TextField
                       onChange={(e) => setEmail(e.target.value)}
+                      value={email}
                       style={{
                         margin: "10px",
                         paddingRight: "20px",
@@ -83,6 +116,7 @@ function contactUs() {
                     />
                     <TextField
                       onChange={(e) => setMessage(e.target.value)}
+                      value={message}
                       style={{
                         margin: "10px",
                         paddingRight: "20px",
@@ -119,4 +153,4 @@ function contactUs() {
   );
 }
 
-export default contactUs;
+export default ContactUs;

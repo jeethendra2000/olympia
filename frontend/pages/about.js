@@ -22,7 +22,7 @@ function about({ team_members }) {
       </Typography>
       <Grid container spacing={6} style={{ marginBottom: "10px" }}>
         {team_members.map((team_member) => (
-          <Grid item xs={12} sm={6} md={3}>
+          <Grid key={team_member.id} item xs={12} sm={6} md={3}>
             <AboutCard
               image={team_member.profileImage}
               fullname={team_member.fullName}

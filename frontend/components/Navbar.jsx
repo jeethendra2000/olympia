@@ -44,7 +44,7 @@ function Navbar() {
           <Hidden mdUp>
             <Sidebar/>
           </Hidden>
-          <Image src="/olympia.png" height={40} width={40} />
+          <Image src="/olympia.png" height={40} width={40} alt="olympia" />
           <Typography variant="h4" style={{ color: "black", flexGrow: "1", marginLeft:"5px" }}>
             Olympia
           </Typography>
@@ -73,7 +73,7 @@ function Navbar() {
             </ListItem>
             <ListItem button>
               <Link
-                href="/contactUs"
+                href="/ContactUs"
                 style={{ textDecoration: "none", color: "black" }}
               >
                 <ListItemText primary="Contact" />
