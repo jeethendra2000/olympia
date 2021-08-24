@@ -2,7 +2,7 @@ import React from "react";
 import LiveCards from "../components/LiveCards";
 import { Grid } from "@material-ui/core";
 
-export const getStaticProps = async () => {
+export const getServerSideProps = async () => {
   const res = await fetch(
     "https://newsapi.org/v2/top-headlines?country=in&category=sports&apiKey=4e9b6a0b39d341209f1f628612b59ae0"
   );
@@ -20,6 +20,7 @@ function checkData(data) {
     data.description != null
   ) {
     const url = data.url.toString();
+    const imageUrl = data.urlToImage.toString();
     return (
       <Grid item xs={12} sm={6} md={3} key={data.source.id}>
         <LiveCards
@@ -27,6 +28,7 @@ function checkData(data) {
           description={data.description}
           url={url}
           name={data.source.name}
+          imageUrl={imageUrl}
         />
       </Grid>
     );
@@ -36,7 +38,7 @@ function checkData(data) {
 
 const liveUpdates = ({ datas }) => {
   return (
-    <div>
+    <div style={{ textAlign: "center" }}>
       <h1>live updates page</h1>
       <Grid container spacing={2}>
         {datas.articles.filter(checkData).map(checkData)}

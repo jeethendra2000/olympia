@@ -139,7 +139,7 @@ function Sidebar() {
                 </ListItem>
               </a>
             </Link>
-            <Link href="/contactUs">
+            <Link href="/ContactUs">
               <a>
                 <ListItem
                   button

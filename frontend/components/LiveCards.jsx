@@ -35,7 +35,7 @@ const useStyles = makeStyles({
   },
 });
 
-function LiveCards({ title, description, url, name }) {
+function LiveCards({ title, description, url, name, imageUrl }) {
   const classes = useStyles();
   return (
     <div>
@@ -44,13 +44,13 @@ function LiveCards({ title, description, url, name }) {
           <Card elevation={5} className={classes.root}>
             <CardActionArea>
               <Grid container>
-                {/* <Grid item xs={4} sm={12} md={12}>
+                <Grid item xs={4} sm={12} md={12}>
                   <CardMedia
                     className={styles.liveCard}
-                    image="https://cdn-images.spcafe.in/img/es3-cfill-w800-h418/articles/Cricket_1/nathannnnn.jpg"
-                    title="Contemplative Reptile"
+                    image={imageUrl}
+                    // title="Contemplative Reptile"
                   ></CardMedia>
-                </Grid> */}
+                </Grid>
                 <Grid item xs={12} sm={12} md={12}>
                   <CardContent>
                     <Box

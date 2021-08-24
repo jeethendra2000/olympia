@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import {
   Box,
   Card,
@@ -18,37 +19,39 @@ function ContactUs() {
   const [emailError, setEmailError] = useState(false);
   const [messageError, setMessageError] = useState(false);
 
-  const handleSubmit = async (e) =>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     setFullNameError(false);
     setEmailError(false);
     setMessageError(false);
 
-    if(fullName == ""){
+    if (fullName == "") {
       setFullNameError(true);
     }
-    if(email == ""){
+    if (email == "") {
       setEmailError(true);
     }
-    if(message == ""){
+    if (message == "") {
       setMessageError(true);
     }
-    
-    if(fullName && email && message){
-      const response = await fetch("http://127.0.0.1:8000/contactUs/", {
-        method:'POST',
-        body:JSON.stringify({fullName, email, message}),
-        headers:{
-          'Content-Type' : 'application/json',
-        },
-      })
-    }
 
-    setFullName("");
-    setEmail("");
-    setMessage("");
-}
+    if (fullName && email && message) {
+      const response = await fetch("http://127.0.0.1:8000/contactUs/", {
+        method: "POST",
+        body: JSON.stringify({ fullName, email, message }),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      alert("Submitted Successfully!");
+      setFullName("");
+      setEmail("");
+      setMessage("");
+    } else {
+      alert("Check your credentials!");
+    }
+  };
 
   return (
     <div style={{ marginTop: "50px" }}>
@@ -58,13 +61,12 @@ function ContactUs() {
             Contact Us
           </Typography>
           <Typography variant="h6" style={{ marginBottom: "40px" }}>
-            Feels like contacting us?
+            Feels like contacting us ?
             <br />
             Submit your queries here and we will get back to you as soon as
             possible.
           </Typography>
         </Grid>
-
         <Grid item xs={12} sm={12} md={2}></Grid>
         <Grid item xs={12} sm={12} md={5}>
           <Card elevation={8} style={{ borderRadius: "35px" }}>
@@ -87,10 +89,11 @@ function ContactUs() {
                     autoComplete="off"
                     style={{ textAlign: "center" }}
                     onSubmit={handleSubmit}
-                    >
+                  >
                     <TextField
                       onChange={(e) => setFullName(e.target.value)}
                       value={fullName}
+                      error={fullNameError}
                       style={{
                         margin: "10px",
                         paddingRight: "20px",
@@ -104,6 +107,7 @@ function ContactUs() {
                     <TextField
                       onChange={(e) => setEmail(e.target.value)}
                       value={email}
+                      error={emailError}
                       style={{
                         margin: "10px",
                         paddingRight: "20px",
@@ -117,6 +121,7 @@ function ContactUs() {
                     <TextField
                       onChange={(e) => setMessage(e.target.value)}
                       value={message}
+                      error={messageError}
                       style={{
                         margin: "10px",
                         paddingRight: "20px",

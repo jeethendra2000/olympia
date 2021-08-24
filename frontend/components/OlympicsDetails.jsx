@@ -22,14 +22,14 @@ function OlympicsDetails() {
       </Typography>
       <Typography variant="h6" color="textSecondary" gutterBottom>
         <h4>
-          {" "}
+               
           The history of the Olympics began some 2,300 years ago. Their origin
           lays in the Olympian Games, which were held in the Olympia area of
           ancient Greece. Although there are some theories on its initial
           purposes, the Games have been said to have started as a festival of
           art and sport, to worship gods. The ancient Olympic Games, however,
           ended in 393 because of the outbreaks of wars in the region in which
-          they were held.{" "}
+          they were held.     
         </h4>
       </Typography>
       <Typography variant="h5" color="textPrimary" align="left">
@@ -66,7 +66,6 @@ function OlympicsDetails() {
           align="right"
         ></img> */}
         <h4>
-          {" "}
           The founder of the International Olympic Committee was Baron Pierre de
           Coubertin, a French educator who reformed education and sports in
           France. His dream of revitalizing ancient Olympics in the modern-day
@@ -85,7 +84,7 @@ function OlympicsDetails() {
           Sorbonne and created the International Olympic Committee. The first
           two Olympic Games were also announced that day, the 1896 Olympics at
           Paris and the 1900 Olympics at Greece. Demetrius Vikelas of Greece was
-          selected as the first IOC president.{" "}
+          selected as the first IOC president.     
         </h4>
       </Typography>
       <Typography variant="h5" color="textPrimary" align="left">
