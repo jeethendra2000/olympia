@@ -3,7 +3,7 @@ import IndianAchiever from "../components/IndianAchiever";
 import { Typography, Grid } from "@material-ui/core";
 
 export const getServerSideProps = async () => {
-  const res = await fetch("http://127.0.0.1:8000/achievers/");
+  const res = await fetch("https://olympia.pythonanywhere.com/achievers/");
   const data = await res.json();
   return {
     props: { achievers: data },

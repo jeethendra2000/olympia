@@ -37,13 +37,16 @@ function ContactUs() {
     }
 
     if (fullName && email && message) {
-      const response = await fetch("http://127.0.0.1:8000/contactUs/", {
-        method: "POST",
-        body: JSON.stringify({ fullName, email, message }),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "https://olympia.pythonanywhere.com/contactUs/",
+        {
+          method: "POST",
+          body: JSON.stringify({ fullName, email, message }),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
       alert("Submitted Successfully!");
       setFullName("");
       setEmail("");

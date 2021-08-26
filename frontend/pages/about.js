@@ -3,7 +3,7 @@ import React from "react";
 import AboutCard from "../components/AboutCard";
 
 export const getServerSideProps = async () => {
-  const res = await fetch("http://127.0.0.1:8000/aboutUs/");
+  const res = await fetch("https://olympia.pythonanywhere.com/aboutUs/");
   const data = await res.json();
 
   return {
@@ -18,10 +18,9 @@ function about({ team_members }) {
         variant="h3"
         style={{ textAlign: "center", marginBottom: "40px" }}
       >
-        Our Team     
-      </Typography>     
+        Our Team{" "}
+      </Typography>{" "}
       <Grid container spacing={6} style={{ marginBottom: "10px" }}>
-             
         {team_members.map((team_member) => (
           <Grid key={team_member.id} item xs={12} sm={6} md={3}>
             <AboutCard
@@ -29,10 +28,10 @@ function about({ team_members }) {
               fullname={team_member.fullName}
               work={team_member.work}
               bio={team_member.bio}
-            />     
+            />{" "}
           </Grid>
-        ))}     
-      </Grid>     
+        ))}{" "}
+      </Grid>{" "}
     </div>
   );
 }
